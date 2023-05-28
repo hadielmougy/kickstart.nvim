@@ -281,6 +281,11 @@ require('telescope').setup {
   },
 }
 
+require('onedark').setup {
+  style = 'darker'
+}
+require('onedark').load()
+
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 
