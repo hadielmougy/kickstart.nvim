@@ -130,22 +130,12 @@ require('lazy').setup({
   },
 
   {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
-
-  {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
     -- See `:help lualine.txt`
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
         component_separators = '|',
         section_separators = '',
       },
@@ -244,9 +234,6 @@ vim.o.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = false
-
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
@@ -280,11 +267,6 @@ require('telescope').setup {
     },
   },
 }
-
-require('onedark').setup {
-  style = 'darker'
-}
-require('onedark').load()
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
